@@ -3,6 +3,7 @@
     "description": "Share votes for high seas",
     "version": "0.0.1",
     "manifest_version":3,
+    "permissions": ["storage"],
     "content_scripts": [
         {
             "matches": [
@@ -11,5 +12,8 @@
             ],
             "js": ["content.js"]
         }
-        ]
+        ],
+        "options_ui": {
+            "page": "options.html"
+        }
 }
