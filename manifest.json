@@ -1,19 +1,19 @@
 {
-    "name": "High Seas Share Votes",
-    "description": "Share votes for high seas",
-    "version": "0.0.1",
-    "manifest_version":3,
-    "permissions": ["storage"],
-    "content_scripts": [
-        {
-            "matches": [
-                "https://highseas.hackclub.com/*",
-                "https://high-seas.hackclub.dev/*"
-            ],
-            "js": ["content.js"]
-        }
-        ],
-        "options_ui": {
-            "page": "options.html"
-        }
+  "name": "High Seas Share Votes",
+  "description": "Share votes for high seas",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://highseas.hackclub.com/*",
+        "https://high-seas.hackclub.dev/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "options_ui": {
+    "page": "options.html"
+  }
 }
