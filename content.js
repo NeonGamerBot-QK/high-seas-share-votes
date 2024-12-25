@@ -9,7 +9,6 @@ async function main() {
   textEl.setAttribute("data-touched", true);
   let word = textEl.children[1].value;
   textEl.children[1].addEventListener("input", async (e) => {
-    console.debug(`word...`);
     const value = e.target.value;
     word = value;
   });
@@ -17,8 +16,6 @@ async function main() {
   let button = document.querySelector("#submit-vote");
   button.addEventListener("click", async (e) => {
     e.preventDefault();
-    console.log(chrome.storage);
-    console.debug(`button`);
     // send a req to webhook.site for now cuz its dev
     // find the matchup thats being voted for??
     const matchupRepoUrl = repo_url;
@@ -29,9 +26,6 @@ async function main() {
       (await chrome.storage.sync
         .get("send_to_user")
         .then((d) => d.send_to_user)) || false;
-    console.debug(`matchupRepoUrl`, matchupRepoUrl);
-    console.debug(`matchupDemoUrl`, matchupDemoUrl);
-    console.log(matchup_author, matchup_title);
     await fetch("https://api.saahild.com/api/highseasships/send_vote", {
       method: "POST",
       headers: {
@@ -86,7 +80,7 @@ setInterval(() => {
     main();
   } else {
   }
-}, 150);
+}, 500);
 window.onload = async () => {
   const isAuthed = await chrome.storage.sync
     .get("is_authed")
