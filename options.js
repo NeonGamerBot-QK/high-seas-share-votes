@@ -1,6 +1,6 @@
 (async () => {
-  if(typeof chrome === "undefined") {
-   var chrome = browser;
+  if (typeof chrome === "undefined") {
+    var chrome = browser;
   }
   const anon = document.getElementById("anon");
   const send_to_user = document.getElementById("sent_to_user");
