@@ -41,9 +41,14 @@ async function main() {
         demo: matchupDemoUrl,
         title: matchup_title,
         author: matchup_author,
-        mathchup_against: Array.from(document.querySelectorAll(
-          `h2[class="font-heading text-2xl font-semibold text-indigo-600 dark:text-indigo-300 mb-4`,
-        )).find(e=> !e.innerText.toLowerCase().includes(matchup_title.toLowerCase()))
+        mathchup_against: Array.from(
+          document.querySelectorAll(
+            `h2[class="font-heading text-2xl font-semibold text-indigo-600 dark:text-indigo-300 mb-4`,
+          ),
+        ).find(
+          (e) =>
+            !e.innerText.toLowerCase().includes(matchup_title.toLowerCase()),
+        ),
       }),
     });
     // will have to rebind somehow
@@ -81,7 +86,7 @@ setInterval(() => {
         });
       });
     main();
-  } 
+  }
 }, 500);
 window.onload = async () => {
   const isAuthed = await chrome.storage.sync
