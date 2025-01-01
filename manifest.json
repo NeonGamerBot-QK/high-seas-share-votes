@@ -13,6 +13,14 @@
       "js": ["content.js"]
     }
   ],
+"action": {
+"default_popup": "options.html",
+"default_icon": {
+  "16": "assets/icons/icon16.png",
+  "48": "assets/icons/icon48.png",
+  "128": "assets/icons/icon128.png"
+}
+},
   "icons": {
     "16": "assets/icons/icon16.png",
     "32": "assets/icons/icon32.png",
@@ -23,6 +31,11 @@
   "options_ui": {
     "page": "options.html"
   },
+  "background": {
+    "service_worker": "background.js"
+  },
+  //TODO do this another time
+  // "uninstall_url": "https://api.saahild.com/api/highseasships/uninstall",
   "browser_specific_settings": {
     "gecko": {
       "id": "high-seas-share-votes@saahild.com"
