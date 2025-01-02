@@ -26,6 +26,14 @@ async function main() {
       (await chrome.storage.sync
         .get("send_to_user")
         .then((d) => d.send_to_user)) || false;
+        console.log(Array.from(
+          document.querySelectorAll(
+            `h2[class="font-heading text-2xl font-semibold text-indigo-600 dark:text-indigo-300 mb-4`,
+          ),
+        ).find(
+          (e) =>
+            !e.innerText.toLowerCase().includes(matchup_title.toLowerCase()),
+        )?.innerHTML, `op`)
     await fetch("https://api.saahild.com/api/highseasships/send_vote", {
       method: "POST",
       headers: {
@@ -48,7 +56,8 @@ async function main() {
         ).find(
           (e) =>
             !e.innerText.toLowerCase().includes(matchup_title.toLowerCase()),
-        ),
+        ).innerText.replace(`\nThis is a project update`, ``)
+        .trim(),
       }),
     });
     // will have to rebind somehow
@@ -99,3 +108,4 @@ window.onload = async () => {
     do_not_event_bother_running = true;
   }
 };
+
