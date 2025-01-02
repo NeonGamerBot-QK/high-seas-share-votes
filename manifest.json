@@ -34,8 +34,6 @@
   "background": {
     "service_worker": "background.js"
   },
-  //TODO do this another time
-  // "uninstall_url": "https://api.saahild.com/api/highseasships/uninstall",
   "browser_specific_settings": {
     "gecko": {
       "id": "high-seas-share-votes@saahild.com"
