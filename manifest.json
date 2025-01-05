@@ -3,18 +3,14 @@
   "description": "Share votes for high seas",
   "version": "0.0.3",
   "manifest_version": 3,
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": [
         "https://highseas.hackclub.com/*",
         "https://high-seas.hackclub.dev/*"
       ],
-      "js": [
-        "content.js"
-      ]
+      "js": ["content.js"]
     }
   ],
   "action": {
