@@ -3,14 +3,18 @@
   "description": "Share votes for high seas",
   "version": "0.0.3",
   "manifest_version": 3,
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": [
         "https://highseas.hackclub.com/*",
         "https://high-seas.hackclub.dev/*"
       ],
-      "js": ["content.js"]
+      "js": [
+        "content.js"
+      ]
     }
   ],
   "action": {
@@ -27,12 +31,8 @@
     "48": "assets/icons/icon48.png",
     "128": "assets/icons/icon128.png"
   },
-
   "options_ui": {
     "page": "options.html"
-  },
-  "background": {
-    "service_worker": "background.js"
   },
   "browser_specific_settings": {
     "gecko": {
